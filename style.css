@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayis-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    position: absolute;
+    width: 50px;
+    right: 2rem;
+    bottom: 2rem;
+}
+
+.fc-gray-blue {
+    color: var(--grayis-blue);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background: var(--very-light-gray);
+}
+
+.container {
+    max-width: 1200px;
+    padding: 3rem 2rem;
+}
+
+.intro {
+    text-align: center;
+}
+
+h1 {
+    font-weight: 200;
+}
+
+h2 {
+    color: var(--very-dark-blue);
+}
+
+.intro > p {
+    padding-top: 1.5rem;
+    max-width: 600px;
+    margin: auto;
+}
+
+.card-cols {
+    padding-top: 3rem;
+    display: grid;
+    place-content: center;
+    gap: 2rem;
+}
+
+.row {
+    background: var(--very-light-gray);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: relative;
+    padding: 1.5rem;
+    height: 230px;
+    border-radius: 0.5rem;
+}
+
+.row::before {
+    content: "";
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    top: -4px;
+    left: 0;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.line-red::before {
+    background: var(--red);
+}
+
+.line-cyan::before {
+    background: var(--cyan);
+}
+
+.line-orange::before {
+    background: var(--orange);
+}
+
+.line-blue::before {
+    background: var(--blue);
+}
+
+@media screen and (min-width: 688px) {
+    .card-cols {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .row:first-child{
+        grid-row: 1 / 3;
+        align-self: center;
+    }
+
+    .row:last-child {
+        grid-column: 3 ;
+        grid-row: 1 / 3;
+        align-self: center;
+    }
+}
